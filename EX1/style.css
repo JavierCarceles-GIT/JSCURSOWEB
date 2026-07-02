@@ -12,3 +12,9 @@ header {
   padding: 1em;
   text-align: center;
 }
+.botonera {
+  display: flex;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+}
