@@ -12,9 +12,37 @@ header {
   padding: 1em;
   text-align: center;
 }
+
 .botonera {
   display: flex;
   padding: 1em;
   align-items: center;
   justify-content: center;
+  gap: 1em;
+}
+.texto {
+  display: flex;
+  padding: 10px;
+  #parrafo {
+    width: 60%;
+    p {
+      padding: 10px;
+    }
+  }
+
+  .divImg {
+    width: 40%;
+    #imgDentro {
+      width: 100%;
+    }
+  }
+}
+.otraseccion {
+  border: 1px solid black;
+  text-align: center;
+}
+
+footer {
+  height: 84.83px;
+  background-color: aqua;
 }

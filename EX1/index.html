@@ -18,8 +18,26 @@
       <h1>Cosas increibles de JS</h1>
     </header>
     <section class="botonera">
+      <button type="button" class="btn btn-warning" onclick="window.location.reload()">Recargar</button>
       <button type="button" class="btn btn-info" onclick="document.getElementById('parrafo').innerHTML = 'flipa pepinillos'">
         Cambiar contenido
+      </button>
+      <button type="button" class="btn btn-primary" onclick="document.querySelector('#imgDentro').src = 'img/cornudo.jpg'">Vaca</button>
+      <button type="button" class="btn btn-secondary" onclick="document.querySelector('#imgDentro').src = 'img/paisaje.jpg'">
+        Paisaje
+      </button>
+      <button type="button" class="btn btn-light" onclick="document.querySelector('header').style.backgroundColor = 'pink'">
+        Cambiar estilo
+      </button>
+      <!-- Esos dos botones de ocultar y mostrar no respetan el espacio al hacer desaparecer el contenido -->
+      <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.display = 'none'">Ocultar</button>
+      <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.display = 'block'">Mostrar</button>
+      <!-- Esos dos botones de ocultar y mostrar respetan el espacio al hacer desaparecer el contenido -->
+      <button type="button" class="btn btn-warning" onclick="document.querySelector('.otraseccion').style.visibility = 'hidden'">
+        Ocultar
+      </button>
+      <button type="button" class="btn btn-warning" onclick="document.querySelector('.otraseccion').style.visibility = 'visible'">
+        Mostrar
       </button>
     </section>
     <section class="texto">
@@ -28,6 +46,14 @@
         ut cum ipsum adipisci voluptatem numquam aliquid! Dignissimos quam incidunt mollitia, ea sed beatae nulla, animi earum distinctio
         nam minus doloribus quasi deleniti delectus necessitatibus, hic ipsa. Ullam dolor itaque labore adipisci?
       </p>
+      <div class="divImg">
+        <img id="imgDentro" src="img/cornudo.jpg" alt="vaca con cuernos" />
+      </div>
     </section>
+    <div class="otraseccion">
+      <h2>Esto se acaba</h2>
+    </div>
+    <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>
