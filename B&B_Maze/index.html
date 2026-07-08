@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comparativa de algoritmos de búsqueda en laberintos.">
+    <title>Laberinto de Bloques - Comparativa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="maze.js" defer></script>
+    <script src="solver.js" defer></script>
+</head>
+<body>
+    <header class="controls">
+        <label for="size">Complejidad:</label>
+        <input type="number" id="size" value="15" min="5" max="60">
+        <button onclick="initMaze()">Generar Laberinto</button>
+        <button onclick="startSolving('GREEDY')">Resolver (Greedy)</button>
+        <button onclick="startSolving('ASTAR')">Resolver (A*)</button>
+        <button onclick="startSolving('BB')">Resolver (B&B)</button>
+        <button onclick="startSolving('BACKTRACKING')">Resolver (Backtracking)</button>
+        <button onclick="startSolving('BRUTEFORCE')">Resolver (BruteForce)</button>
+    </header>
+
+    <div class="layout">
+        <main>
+            <div id="mazeContainer"></div>
+        </main>
+        <aside>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Algoritmo</th>
+                        <th>Tiempo</th>
+                        <th>Coste</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <tr id="row-GREEDY"><td>Greedy</td><td class="time">-</td><td class="cost">-</td></tr>
+                    <tr id="row-ASTAR"><td>A*</td><td class="time">-</td><td class="cost">-</td></tr>
+                    <tr id="row-BB"><td>B&B</td><td class="time">-</td><td class="cost">-</td></tr>
+                    <tr id="row-BACKTRACKING"><td>Backtracking</td><td class="time">-</td><td class="cost">-</td></tr>
+                    <tr id="row-BRUTEFORCE"><td>Brute Force</td><td class="time">-</td><td class="cost">-</td></tr>
+                </tbody>
+            </table>
+        </aside>
+    </div>
+</body>
+</html>

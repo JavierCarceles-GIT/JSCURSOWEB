@@ -1,0 +1,74 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  margin: 0;
+  padding: 15px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.controls {
+  background: #2d2d2d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+aside {
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+#mazeContainer {
+  display: grid;
+  width: 80vh;
+  height: 80vh;
+  background-color: #111;
+  border: 2px solid #2c3e50;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+}
+.wall {
+  background-color: #2c3e50;
+}
+.path {
+  background-color: #ecf0f1;
+}
+.start {
+  background-color: #2ecc71 !important;
+}
+.end {
+  background-color: #e74c3c !important;
+}
+.exploring {
+  background-color: #3498db;
+}
+.solution {
+  background-color: #f1c40f !important;
+}
