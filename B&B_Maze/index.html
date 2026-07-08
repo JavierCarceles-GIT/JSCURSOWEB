@@ -3,46 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comparativa de algoritmos de búsqueda en laberintos.">
-    <title>Laberinto de Bloques - Comparativa</title>
+    <meta name="description" content="Comparativa de algoritmos de búsqueda en laberintos en tiempo real.">
+    <title>MazeMind // Comparativa de Algoritmos</title>
     <link rel="stylesheet" href="style.css">
     <script src="maze.js" defer></script>
     <script src="solver.js" defer></script>
 </head>
 <body>
-    <header class="controls">
-        <label for="size">Complejidad:</label>
-        <input type="number" id="size" value="15" min="5" max="60">
-        <button onclick="initMaze()">Generar Laberinto</button>
-        <button onclick="startSolving('GREEDY')">Resolver (Greedy)</button>
-        <button onclick="startSolving('ASTAR')">Resolver (A*)</button>
-        <button onclick="startSolving('BB')">Resolver (B&B)</button>
-        <button onclick="startSolving('BACKTRACKING')">Resolver (Backtracking)</button>
-        <button onclick="startSolving('BRUTEFORCE')">Resolver (BruteForce)</button>
-    </header>
 
-    <div class="layout">
-        <main>
-            <div id="mazeContainer"></div>
-        </main>
-        <aside>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Algoritmo</th>
-                        <th>Tiempo</th>
-                        <th>Coste</th>
-                    </tr>
-                </thead>
-                <tbody id="resultsTable">
-                    <tr id="row-GREEDY"><td>Greedy</td><td class="time">-</td><td class="cost">-</td></tr>
-                    <tr id="row-ASTAR"><td>A*</td><td class="time">-</td><td class="cost">-</td></tr>
-                    <tr id="row-BB"><td>B&B</td><td class="time">-</td><td class="cost">-</td></tr>
-                    <tr id="row-BACKTRACKING"><td>Backtracking</td><td class="time">-</td><td class="cost">-</td></tr>
-                    <tr id="row-BRUTEFORCE"><td>Brute Force</td><td class="time">-</td><td class="cost">-</td></tr>
-                </tbody>
-            </table>
-        </aside>
+    <div class="app-container">
+        
+        <header class="app-header">
+            <div class="logo-area">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 3h18v18H3V3z" />
+                    <path d="M9 3v12h6V9h3" />
+                </svg>
+                <h1>Maze<span>Mind</span></h1>
+            </div>
+            <p class="subtitle">Simulador de Algoritmos de Búsqueda de Caminos</p>
+        </header>
+
+        <section class="controls-panel">
+            <div class="control-group">
+                <label for="size">Complejidad (N):</label>
+                <input type="range" id="size" value="15" min="5" max="100" oninput="this.nextElementSibling.value = this.value">
+                <output class="complexity-value">15</output>
+            </div>
+            
+            <button class="btn btn-primary" onclick="initMaze()">
+                Generar Laberinto
+            </button>
+            
+            <div class="divider"></div>
+            
+            <div class="solver-buttons">
+                <button class="btn btn-secondary btn-greedy" onclick="startSolving('GREEDY')">Greedy</button>
+                <button class="btn btn-secondary btn-astar" onclick="startSolving('ASTAR')">A*</button>
+                <button class="btn btn-secondary btn-bb" onclick="startSolving('BB')">B&B</button>
+                <button class="btn btn-secondary btn-backtracking" onclick="startSolving('BACKTRACKING')">Backtracking</button>
+                <button class="btn btn-secondary btn-bruteforce" onclick="startSolving('BRUTEFORCE')">BruteForce</button>
+            </div>
+        </section>
+
+        <div class="workspace">
+            <main class="maze-wrapper">
+                <div id="mazeContainer"></div>
+            </main>
+            
+            <aside class="stats-panel">
+                <h2>Rendimiento</h2>
+                <table class="stats-table">
+                    <thead>
+                        <tr>
+                            <th>Algoritmo</th>
+                            <th>Tiempo</th>
+                            <th>Coste</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTable">
+                        <tr id="row-GREEDY"><td><span class="badge badge-greedy">Greedy</span></td><td class="time">-</td><td class="cost">-</td></tr>
+                        <tr id="row-ASTAR"><td><span class="badge badge-astar">A*</span></td><td class="time">-</td><td class="cost">-</td></tr>
+                        <tr id="row-BB"><td><span class="badge badge-bb">B&B</span></td><td class="time">-</td><td class="cost">-</td></tr>
+                        <tr id="row-BACKTRACKING"><td><span class="badge badge-backtracking">Backtracking</span></td><td class="time">-</td><td class="cost">-</td></tr>
+                        <tr id="row-BRUTEFORCE"><td><span class="badge badge-bruteforce">Brute Force</span></td><td class="time">-</td><td class="cost">-</td></tr>
+                    </tbody>
+                </table>
+            </aside>
+        </div>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 MazeMind Javier Cárceles &bull; Desarrollado para análisis de Complejidad Algorítmica</p>
+        </footer>
     </div>
+
 </body>
 </html>

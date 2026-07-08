@@ -2,7 +2,7 @@ let activePaths = [];
 let bestPath = null;
 let bestCost = Infinity;
 let minCostToCell = [];
-let currentAlgorithm = "ASTAR";
+let currentAlgorithm = "HOLIWIS";
 let startTime = 0;
 let lastPath = [];
 
@@ -166,8 +166,7 @@ function solveStep() {
 
     if (
       currentAlgorithm === "GREEDY" ||
-      currentAlgorithm === "BRUTEFORCE" ||
-      currentAlgorithm === "BACKTRACKING"
+      currentAlgorithm === "BRUTEFORCE"
     ) {
       activePaths = [];
     }
