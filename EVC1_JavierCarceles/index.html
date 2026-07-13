@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexus Vault: La tienda gamer definitiva de skins y códigos de League of Legends. Consigue RP y aspectos exclusivos al mejor precio con envíos instantáneos.">
+    <meta name="keywords" content="League of Legends, LoL, Skins LoL, Códigos RP, Riot Points, Hextech, Tienda Gamer">
+    <title>Nexus Vault | Skins y Códigos de League of Legends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="startup-logo">NEXUS VAULT</span>
+                <p class="startup-slogan">Desbloquea tu potencial en la Grieta del Invocador</p>
+            </div>
+            <button id="theme-toggle" class="btn-theme" aria-label="Cambiar entre modo día y noche">🌙 Modo Noche</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="user-status-card" aria-labelledby="user-status-title">
+            <h2 id="user-status-title" class="sr-only">Estado del Invocador</h2>
+            <div class="status-container">
+                <p>Nivel de Invocador: <strong id="user-level">Principiante</strong></p>
+                <p>Puntos Acumulados: <span id="user-points">0</span> LP</p>
+            </div>
+        </section>
+
+        <section class="catalog-section" aria-labelledby="catalog-title">
+            <h2 id="catalog-title">Aspectos y Códigos Disponibles</h2>
+            <div id="products-grid" class="products-grid">
+                </div>
+        </section>
+
+        <section class="checkout-section" aria-labelledby="cart-title">
+            <h2 id="cart-title">Tu Pedido</h2>
+            
+            <div class="cart-status-box" aria-live="polite">
+                <p id="cart-message" class="cart-message">Tu carrito está triste.</p>
+                <p>Productos en el carrito: <strong id="cart-count">0</strong></p>
+            </div>
+
+            <form id="checkout-form" class="checkout-form" novalidate>
+                <fieldset>
+                    <legend>Datos de Facturación e Instant Delivery</legend>
+                    
+                    <div class="form-group">
+                        <label for="username">Nombre de Invocador:</label>
+                        <input type="text" id="username" name="username" required minlength="3" placeholder="Ej. Faker#KR1">
+                        <span class="error-msg" id="error-username" aria-live="assertive"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required placeholder="tu-email@riot.com">
+                        <span class="error-msg" id="error-email" aria-live="assertive"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creator-code">Código de Creador (Descuento):</label>
+                        <input type="text" id="creator-code" name="creator-code" placeholder="Ej. IBAI o FAKER">
+                        <span class="success-msg" id="success-code" aria-live="polite"></span>
+                    </div>
+                </fieldset>
+
+                <div class="summary-box">
+                    <p>Subtotal: <span id="subtotal-price">0.00</span>€</p>
+                    <p>Descuento aplicado: <span id="discount-amount">0.00</span>€</p>
+                    <p class="total-highlight">Total a Pagar: <span id="total-price">0.00</span>€</p>
+                </div>
+
+                <button type="submit" id="btn-validate" class="btn-submit">Validar y Procesar Compra</button>
+            </form>
+
+            <div id="checkout-result" class="checkout-result hidden" aria-live="status"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Nexus Vault. Desarrollado para la Evaluación Continua. No afiliado a Riot Games.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
