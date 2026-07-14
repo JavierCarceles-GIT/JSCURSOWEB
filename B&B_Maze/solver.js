@@ -79,11 +79,11 @@ function solveStep() {
     let rawTime = endTime - startTime;
     let timeString =
       rawTime < 1000
-        ? Math.round(rawTime) + " ms"
+        ? Math.round(rawTime) + "ms"
         : rawTime < 60000
-          ? (rawTime / 1000).toFixed(2) + " s"
+          ? (rawTime / 1000).toFixed(2) + "s"
           : Math.floor(rawTime / 60000) +
-            " m " +
+            "m " +
             Math.floor((rawTime % 60000) / 1000) +
             " s";
 
